@@ -1,4 +1,4 @@
-# batch add top 5 songs of artists to one playlist # 
+# batch add top 5 songs of artists to selected playlist
 ## discover new artists by seeing if you like their top songs ##
 
 1. read in list of artists names
@@ -7,9 +7,15 @@
 4. get top 5 tracks for artist's spotify ID
 5. pipe those top 5 tracks into a playlist
 
-(command line arguments)
+### Usage
+```
 ./autodisco spotify_connection artist_list playlist_name
 
-(spotify connection)
+where
+
+spotify_connection
 API key, username/pass, etc.
 
+artist_list is \n-separated or comma-separated text file
+
+```
