@@ -48,7 +48,7 @@ if __name__ == '__main__':
         print "Usage: %s username playlist_name artist_name ..." % (sys.argv[0],)
         sys.exit()
 
-    scope = 'playlist-modify-public'
+    scope = 'playlist-modify-private'
     token = util.prompt_for_user_token(username, scope)
 
     if token:

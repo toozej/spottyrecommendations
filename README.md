@@ -3,6 +3,9 @@
 This script adds the top 10 songs of each artist you specify and adds them to a playlist of your choosing. The intent is that this will create a quick way to check out new artists' music (likely by "Saving" the playlist for offline or "Always on device" usage). 
 
 ### Usage
+
+Ensure that you've already created a playlist in Spotify, and that you know the name of it.
+
 ```
 $ cp auth.sh.example auth.sh
 $ vim auth.sh # and fill it in!
