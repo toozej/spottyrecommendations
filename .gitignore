@@ -1,2 +1,5 @@
 venv/
 *.pdf
+auth.sh
+*.swp
+.cache-*
