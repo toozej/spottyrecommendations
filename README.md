@@ -11,11 +11,11 @@ $ cp auth.sh.example auth.sh
 $ vim auth.sh # and fill it in!
 $ chmod u+x auth.sh
 $ ./auth.sh
-$ python autodisco.py username playlist_name artist_name ...
+$ python spottyrecommendations.py username playlist_name artist_name ...
 ```
 
 ### Example
 ```
-$ python autodisco.py myUsername tmp Radiohead Nirvana "Avenged Sevenfold"
+$ python spottyrecommendations.py myUsername tmp Radiohead Nirvana "Avenged Sevenfold"
 ```
 Will add the top 10 songs each for Radiohead, Nirvana and Avenged Sevenfold to a playlist called tmp which is owned by myUsername

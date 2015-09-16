@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "setting authorization variables for autodisco"
+echo "setting authorization variables for spottyrecommendations"
 
 export SPOTIPY_CLIENT_ID='your-spotify-client-id'
 export SPOTIPY_CLIENT_SECRET='your-spotify-client-secret'
