@@ -16,13 +16,14 @@ def get_artist_id(name):
         return None
 
 def valid_playlist_id(username, playlist_name):
+    playlist_id = 0
     playlists = sp.user_playlists(username)
     for playlist in playlists['items']:
         if playlist_name in playlist['name']:
-            return playlist['id']
-        else:
-            return '0'
+            playlist_id = playlist['id']
+    return playlist_id
 
+#todo: fix this function, doesn't skip duplicates currently
 def playlist_contain_track(username, playlist_name, track_name):
     # get playlist
     playlists = sp.user_playlists(username)
@@ -50,20 +51,21 @@ if __name__ == '__main__':
 
     scope = 'playlist-modify-private'
     token = util.prompt_for_user_token(username, scope)
+    num_top_tracks = 5
 
     if token:
         sp = spotipy.Spotify(auth=token)
         playlist_id = valid_playlist_id(username, playlist_name)
         if playlist_id > 0:
-            print "has valid playlist"
             for artist in artist_name:
                 print( "currently on artist: " + artist)
                 # get artist id
                 artist_id = get_artist_id(artist)
                 # get top tracks
                 top_tracks_response = sp.artist_top_tracks(artist_id)
+                # only keep top 5 tracks from top tracks list
                 # put tracks into playlist
-                for track in top_tracks_response['tracks']:
+                for track in top_tracks_response['tracks'][5:]:
                     if not playlist_contain_track(username, playlist_name, track['name']):
                         print("adding track " + track['name'])
                         sp.user_playlist_add_tracks(username, playlist_id, [track['uri']])
